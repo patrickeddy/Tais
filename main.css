@@ -1,0 +1,17 @@
+body{
+  background: url("assets/img/taisbackgroundblur.jpg") center fixed no-repeat;
+  background-size: cover;
+}
+h1, p {
+  color: white;
+}
+.translate-container{
+  text-align: center;
+  height: 15em;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+}
