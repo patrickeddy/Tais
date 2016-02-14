@@ -20,6 +20,9 @@ h4{
 .message-textarea{
   width: 100%;
 }
+pre {
+  font-family: Arial, sans-serif;
+}
 .output{
   border: 1px solid lightgray;
   height: 3em;

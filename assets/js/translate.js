@@ -28,13 +28,13 @@ $(document).ready(function(){
     var ABBREVIATED_TRANSLATION_LIMIT = 100;
     // Populate the results screen with the message.
     var abbrTranslationMessage = "Hi there,<br /><br />We've finished your translation! Here's a preview:<br /><br />"
-      + "\"" + FULL_TRANSLATION.slice(0, ABBREVIATED_TRANSLATION_LIMIT) + "...\"" + "<br /><br />"
-      + "If you'd like to purchase the entire translation, use this PayPal link:<br /><br />"
-      + paymentLink;
+      + "<i>" + FULL_TRANSLATION.slice(0, ABBREVIATED_TRANSLATION_LIMIT) + "...</i>" + "<br /><br />"
+      + "If you'd like to purchase the entire translation, use this PayPal link:<br /><br />";
     $("#abbr-translation").html($.parseHTML(abbrTranslationMessage));
+    $("#abbr-translation").append(paymentLink);
 
-    var fullTranslationMessage = "Hi there,\nWe got your payment. Here is your full translation:\n\n"
-    + "<i>" + FULL_TRANSLATION + "</i><br /><br />"
+    var fullTranslationMessage = "Hi there,\nWe got your payment. Here is your full translation:<br /><br />"
+    + "<i>" + FULL_TRANSLATION.replace("\n", "<br />") + "</i><br /><br />"
     +"<b>Thank you for using Tais!</b>"
 
     $("#full-translation").html($.parseHTML(fullTranslationMessage));
@@ -46,10 +46,10 @@ $(document).ready(function(){
 
   // ====== COPY BUTTONS ======
   $("#copy-abbr").on('click', () => {
-    copyToClipboard($("#abbr-translation"));
+    copyToClipboard("abbr-translation");
   });
   $("#copy-full").on('click', () => {
-    copyToClipboard($("#full-translation"));
+    copyToClipboard("full-translation");
   });
 
 });
@@ -67,8 +67,24 @@ function toggleScreens() {
   Copies the element text to the clipboard.
 */
 function copyToClipboard(element) {
-  $temp = $(element);
-  $temp.focus();
-  $temp[0].setSelectionRange(0, $temp.html().length -1);
+  SelectText(element);
   document.execCommand("copy");
+}
+
+function SelectText(element) {
+    var doc = document
+        , text = doc.getElementById(element)
+        , range, selection
+    ;
+    if (doc.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+    } else if (window.getSelection) {
+        selection = window.getSelection();
+        range = document.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
 }
