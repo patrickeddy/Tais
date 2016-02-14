@@ -25,7 +25,7 @@ pre {
 }
 .output{
   border: 1px solid lightgray;
-  height: 3em;
+  height: 8em;
   padding: .5em;
   overflow-y: auto;
 }
