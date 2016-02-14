@@ -23,6 +23,9 @@ h4{
 pre {
   font-family: Arial, sans-serif;
 }
+.native-language-radio{
+  margin-top: 1em;
+}
 .output{
   border: 1px solid lightgray;
   height: 8em;

@@ -27,17 +27,35 @@ $(document).ready(function(){
     // Abbreviated message length
     var ABBREVIATED_TRANSLATION_LIMIT = 100;
     // Populate the results screen with the message.
-    var abbrTranslationMessage = "Hi there,<br /><br />We've finished your translation! Here's a preview:<br /><br />"
-      + "<i>" + FULL_TRANSLATION.slice(0, ABBREVIATED_TRANSLATION_LIMIT) + "...</i>" + "<br /><br />"
-      + "If you'd like to purchase the entire translation, use this PayPal link:<br /><br />";
-    $("#abbr-translation").html($.parseHTML(abbrTranslationMessage));
-    $("#abbr-translation").append(paymentLink);
 
-    var fullTranslationMessage = "Hi there,\nWe got your payment. Here is your full translation:<br /><br />"
-    + "<i>" + FULL_TRANSLATION.replace("\n", "<br />") + "</i><br /><br />"
-    +"<b>Thank you for using Tais!</b>"
+    // Is this user a Japanese or English speaker?
+    if ($("#english-speaker").attr("checked")) {
+      // === ENGLISH ====
+      var abbrTranslationMessage = "Hi there,<br /><br />We've finished your translation! Here's a preview:<br /><br />"
+        + "<i>" + FULL_TRANSLATION.slice(0, ABBREVIATED_TRANSLATION_LIMIT) + "...</i>" + "<br /><br />"
+        + "If you'd like to purchase the entire translation, use this PayPal link:<br /><br />";
+      $("#abbr-translation").html($.parseHTML(abbrTranslationMessage));
+      $("#abbr-translation").append(paymentLink);
 
-    $("#full-translation").html($.parseHTML(fullTranslationMessage));
+      var fullTranslationMessage = "Hi there,\nWe got your payment. Here is your full translation:<br /><br />"
+      + "<i>" + FULL_TRANSLATION.replace("\n", "<br />") + "</i><br /><br />"
+      +"<b>Thank you for using Tais!</b>"
+
+      $("#full-translation").html($.parseHTML(fullTranslationMessage));
+    } else {
+      // === JAPANESE ====
+      var abbrTranslationMessage = "こんにちは,<br /><br />タイスで翻訳できました！これから試写です。<br /><br />"
+        + "<i>" + FULL_TRANSLATION.slice(0, ABBREVIATED_TRANSLATION_LIMIT) + "...</i>" + "<br /><br />"
+        + "全部の翻訳を買えば、このリンククリックしてください。<br /><br />";
+      $("#abbr-translation").html($.parseHTML(abbrTranslationMessage));
+      $("#abbr-translation").append(paymentLink);
+
+      var fullTranslationMessage = "こんにちは,\n支払い貰えました. これは全部の翻訳です。<br /><br />"
+      + "<i>" + FULL_TRANSLATION.replace("\n", "<br />") + "</i><br /><br />"
+      +"<b>タイスが使ってくれてありがとう！</b>"
+
+      $("#full-translation").html($.parseHTML(fullTranslationMessage));
+    }
   });
 
   $("#go-back").on('click', () => {

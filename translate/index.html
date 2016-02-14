@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en, ja">
 <head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tais - Express yourself in another language.</title>
   <!-- jQuery -->
@@ -18,7 +19,7 @@
 <body>
   <div class="container-fluid">
     <div class="editing">
-      <h3>Tais Translation Tool</h1>
+      <h3>Tais Translation Tool</h3>
         <div>
           <h4>Message</h4>
           <textarea class="form-control message-textarea" rows="3" id="message-textarea" placeholder="Paste the message to be translated here."></textarea>
@@ -26,6 +27,17 @@
         <div>
           <h4>Translation</h4>
           <textarea class="form-control message-textarea" rows="5" id="translation-textarea" placeholder="Translate it here."></textarea>
+        </div>
+        <div class="native-language-radio">
+          <h4>Customer's Native Language</h4>
+          <label class="radio-inline">
+            <input type="radio" name="native-language-radio" id="english-speaker" checked="yes">
+            English
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="native-language-radio" id="japanese-speaker">
+            Japanese
+          </label>
         </div>
         <div>
           <button class="btn btn-primary btn-lg btn-block submit-translation" id="submit-translation">Submit</button>
