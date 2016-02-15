@@ -44,15 +44,15 @@ $(document).ready(function(){
       $("#full-translation").html($.parseHTML(fullTranslationMessage));
     } else {
       // === JAPANESE ====
-      var abbrTranslationMessage = "こんにちは,<br /><br />タイスで翻訳できました！これから試写です。<br /><br />"
+      var abbrTranslationMessage = "こんにちは,<br /><br />タイスで翻訳できました！これはプリビューです。<br /><br />"
         + "<i>" + FULL_TRANSLATION.slice(0, ABBREVIATED_TRANSLATION_LIMIT) + "...</i>" + "<br /><br />"
-        + "全部の翻訳を買えば、このリンククリックしてください。<br /><br />";
+        + "全部の翻訳を買いたければ、このリンクをクリックしてください。<br /><br />";
       $("#abbr-translation").html($.parseHTML(abbrTranslationMessage));
       $("#abbr-translation").append(paymentLink);
 
-      var fullTranslationMessage = "こんにちは,\n支払い貰えました. これは全部の翻訳です。<br /><br />"
+      var fullTranslationMessage = "こんにちは,\n支払いを受け取りました. これが全部の翻訳です。<br /><br />"
       + "<i>" + FULL_TRANSLATION.replace("\n", "<br />") + "</i><br /><br />"
-      +"<b>タイスが使ってくれてありがとう！</b>"
+      +"<b>タイスを使ってくれてありがとうございます！</b>"
 
       $("#full-translation").html($.parseHTML(fullTranslationMessage));
     }
