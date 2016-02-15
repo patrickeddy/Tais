@@ -50,7 +50,7 @@ $(document).ready(function(){
       $("#abbr-translation").html($.parseHTML(abbrTranslationMessage));
       $("#abbr-translation").append(paymentLink);
 
-      var fullTranslationMessage = "こんにちは,\n支払いを受け取りました. これが全部の翻訳です。<br /><br />"
+      var fullTranslationMessage = "こんにちは,\n支払いを受け取りました. これが全部の翻訳されたメッセージです。<br /><br />"
       + "<i>" + FULL_TRANSLATION.replace("\n", "<br />") + "</i><br /><br />"
       +"<b>タイスを使ってくれてありがとうございます！</b>"
 
