@@ -8,8 +8,8 @@ $(document).ready(function(){
     var CHARACTER_PRICE = 0.005;
     // Get the values of the translation textarea.
     var FULL_TRANSLATION = $("#translation-textarea").val();
-    // Create the link based on the number of words in the translated text.
-    var subTotal = CHARACTER_PRICE * FULL_TRANSLATION.length;
+    // Create the link based on the number of words in the translated text and the service fee.
+    var subTotal = (CHARACTER_PRICE * FULL_TRANSLATION.length) + SERVICE_FEE;
     console.log("The price is: " + subTotal);
 
     // ====== LINK ======
