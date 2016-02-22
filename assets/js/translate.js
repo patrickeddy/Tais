@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  $("#submit-translation").on('click', () => {
+  $("#submit-translation").on('click', function(){
     // ====== PRICE AND TRANSLATION ======
     // Service fee added for Tais workers.
     var SERVICE_FEE = 0.5;
@@ -58,15 +58,15 @@ $(document).ready(function(){
     }
   });
 
-  $("#go-back").on('click', () => {
+  $("#go-back").on('click', function() {
     toggleScreens();
   });
 
   // ====== COPY BUTTONS ======
-  $("#copy-abbr").on('click', () => {
+  $("#copy-abbr").on('click', function() {
     copyToClipboard("abbr-translation");
   });
-  $("#copy-full").on('click', () => {
+  $("#copy-full").on('click', function() {
     copyToClipboard("full-translation");
   });
 
