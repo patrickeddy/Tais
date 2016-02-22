@@ -3,7 +3,7 @@ $(document).ready(function(){
   $("#submit-translation").on('click', function(){
     // ====== PRICE AND TRANSLATION ======
     // Service fee added for Tais workers.
-    var SERVICE_FEE = 0.5;
+    var SERVICE_FEE = 1;
     // Cost of each character.
     var CHARACTER_PRICE = 0.005;
     // Get the values of the translation textarea.
